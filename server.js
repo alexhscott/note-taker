@@ -7,8 +7,7 @@ var path = require('path')
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.get('/hello-world', (req, res) => {
-    res.send("Hello");
-    console.log('hi');
+  res.sendFile(path.join(__dirname, './public/index.html'));
 })
 
 app.listen(PORT, () => {
