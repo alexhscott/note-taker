@@ -7,7 +7,6 @@ var path = require('path')
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.get('/hello-world', (req, res) => {
-
     res.send("Hello")
 })
 
