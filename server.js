@@ -6,10 +6,14 @@ var path = require('path')
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
-app.get('/hello-world', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 })
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
+})
+
+app.get('/notes', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/notes.html'));
 })
