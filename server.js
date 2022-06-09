@@ -5,8 +5,9 @@ const PORT = process.env.PORT || 3001;
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-    console.log(__dirname);
+   // res.sendFile(path.join(__dirname, '/public/index.html'));
+    //console.log(__dirname);
+    console.log('hey');
 })
 
 app.listen(port, () => {
