@@ -1,7 +1,8 @@
 const path = require('path');
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3001;
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
@@ -9,5 +10,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`);
 })
