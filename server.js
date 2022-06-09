@@ -1,7 +1,10 @@
-const path = require('path');
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3001;
+var favicon = require('serve-favicon')
+var path = require('path')
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.get('/', (req, res) => {
     console.log("hey")

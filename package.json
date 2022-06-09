@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "express-favicon": "^2.0.1",
     "heroku": "^7.60.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "serve-favicon": "^2.5.0"
   }
 }
