@@ -17,3 +17,9 @@ app.listen(PORT, () => {
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, './public/notes.html'));
 })
+
+app.post('/api/animals', (req, res) => {
+  req.body.id = notes.length.toString();
+
+  res.json(req.body);
+});
