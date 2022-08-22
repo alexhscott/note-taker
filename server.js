@@ -1,25 +1,24 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
+
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
+
 const PORT = process.env.PORT || 3001;
-var favicon = require('serve-favicon')
-var path = require('path')
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
-})
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`)
-})
+app.use(express.json());
 
-app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/notes.html'));
-})
+app.use(express.static("public"));
 
-app.post('/api/animals', (req, res) => {
-  req.body.id = notes.length.toString();
+// api Routes
+app.use("/api", apiRoutes);
 
-  res.json(req.body);
-});
+// html Routes
+app.use("/", htmlRoutes);
+
+
+
+app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));

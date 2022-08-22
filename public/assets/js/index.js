@@ -33,7 +33,6 @@ const getNotes = () =>
     },
   });
 
-// save notes
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -43,7 +42,6 @@ const saveNote = (note) =>
     body: JSON.stringify(note),
   });
 
-// delete notes
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -81,7 +79,7 @@ const handleNoteSave = () => {
 
 // Delete the clicked note
 const handleNoteDelete = (e) => {
-  // Prevents the click listener for the list from being called when the button inside of it is clicked
+  // prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
   const note = e.target;
@@ -133,7 +131,6 @@ const renderNoteList = async (notes) => {
     liEl.classList.add('list-group-item');
 
     const spanEl = document.createElement('span');
-    spanEl.classList.add('list-item-title');
     spanEl.innerText = text;
     spanEl.addEventListener('click', handleNoteView);
 
